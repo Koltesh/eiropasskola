@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import icon from "@/assets/icon.png";
 
 const Footer = () => {
   const links = {
@@ -35,8 +35,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-background/10">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-6">
-            <a href="/" className="flex items-center">
-              <img src={logo} alt="Eiropas Tālmācības Vidusskola" className="h-10" />
+            <a href="/" className="flex items-center gap-2">
+              <img src={icon} alt="ETV" className="h-10 w-auto" />
+              <div className="flex flex-col leading-tight">
+                <span className="font-display font-bold text-sm text-background">EIROPAS TĀLMĀCĪBAS</span>
+                <span className="font-display font-bold text-sm text-background">VIDUSSKOLA</span>
+              </div>
             </a>
             <p className="text-background/60 max-w-sm">
               ETV ir akreditēta Latvijas tālmācības skola, kas piedāvā kvalitatīvu izglītību 7.–12. klasei.
