@@ -21,70 +21,56 @@ const CTA = () => {
             style={{ background: 'radial-gradient(circle, hsl(var(--primary)) 0%, transparent 60%)' }}
           />
 
-          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
             {/* Content */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-background leading-tight">
-                Gatavs sākt savu ceļojumu ar ETV?
+                Esi gatavs sasniegt vairāk?
               </h2>
-              <p className="text-lg text-background/80 max-w-lg">
-                Piesakies jau šodien un sāc mācīties savā tempā. Piedāvājam 30 dienu naudas atgriešanas garantiju.
+              <p className="text-lg text-background/80 max-w-2xl mx-auto">
+                Piesakies mācībām vai sazinies ar mums — atbildēsim uz jautājumiem un ieteiksim piemērotāko mācību programmu.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="hero" 
-                  className="group bg-primary text-primary-foreground"
-                >
-                  Pieteikties tagad
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="border-background/30 text-background hover:bg-background hover:text-navy"
-                >
-                  Uzdot jautājumu
-                </Button>
-              </div>
+            </div>
+            
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                variant="hero" 
+                size="lg"
+                className="group bg-primary text-primary-foreground"
+              >
+                Pieteikties mācībām
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
 
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="bg-background/10 backdrop-blur rounded-2xl p-6 space-y-4">
-                <h3 className="font-display text-xl font-bold text-background">Sazinies ar mums</h3>
-                
-                <div className="space-y-4">
-                  <a 
-                    href="mailto:info@etv.lv" 
-                    className="flex items-center gap-4 text-background/80 hover:text-background transition-colors group"
-                  >
-                    <div className="w-12 h-12 bg-background/10 rounded-xl flex items-center justify-center group-hover:bg-background/20 transition-colors">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-background/60">E-pasts</div>
-                      <div className="font-medium">info@etv.lv</div>
-                    </div>
-                  </a>
-                  
-                  <a 
-                    href="tel:+37120000000" 
-                    className="flex items-center gap-4 text-background/80 hover:text-background transition-colors group"
-                  >
-                    <div className="w-12 h-12 bg-background/10 rounded-xl flex items-center justify-center group-hover:bg-background/20 transition-colors">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-background/60">Telefons</div>
-                      <div className="font-medium">+371 2000 0000</div>
-                    </div>
-                  </a>
+            {/* Contact Links */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+              <a 
+                href="tel:+37128004224" 
+                className="flex items-center gap-3 text-background/80 hover:text-background transition-colors"
+              >
+                <div className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center">
+                  <Phone className="w-5 h-5" />
                 </div>
-              </div>
-
-              <p className="text-sm text-background/60">
-                Darba laiks: P–Pk 9:00–17:00
-              </p>
+                <div className="text-left">
+                  <div className="text-xs text-background/60">Zvani mums</div>
+                  <div className="font-medium">28 004 224</div>
+                </div>
+              </a>
+              
+              <a 
+                href="mailto:etv@eiropasskola.lv" 
+                className="flex items-center gap-3 text-background/80 hover:text-background transition-colors"
+              >
+                <div className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div className="text-left">
+                  <div className="text-xs text-background/60">Raksti mums</div>
+                  <div className="font-medium">etv@eiropasskola.lv</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
