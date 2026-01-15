@@ -31,13 +31,13 @@ const Testimonials = () => {
       />
       <div 
         className="absolute top-1/4 -right-32 w-64 h-64 rounded-full opacity-10"
-        style={{ background: 'radial-gradient(circle, hsl(var(--teal)) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, hsl(var(--green)) 0%, transparent 70%)' }}
       />
 
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-teal/10 text-teal px-4 py-2 rounded-full">
+          <div className="inline-flex items-center gap-2 bg-green/10 text-green px-4 py-2 rounded-full">
             <Star className="w-4 h-4 fill-current" />
             <span className="text-sm font-medium">Atsauksmes</span>
           </div>
@@ -73,7 +73,7 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-gold-light rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-orange-light rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>

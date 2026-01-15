@@ -19,7 +19,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-gold">
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-orange">
               <GraduationCap className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="font-display font-bold text-xl text-foreground">ETV</span>

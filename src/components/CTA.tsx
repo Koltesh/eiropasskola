@@ -5,7 +5,7 @@ const CTA = () => {
   return (
     <section id="contact" className="py-24 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto relative z-10">
-        <div className="bg-slate rounded-3xl p-8 lg:p-16 relative overflow-hidden">
+        <div className="bg-navy rounded-3xl p-8 lg:p-16 relative overflow-hidden">
           {/* Background Pattern */}
           <div 
             className="absolute inset-0 opacity-10"
@@ -41,7 +41,7 @@ const CTA = () => {
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="border-background/30 text-background hover:bg-background hover:text-slate"
+                  className="border-background/30 text-background hover:bg-background hover:text-navy"
                 >
                   Uzdot jautājumu
                 </Button>
