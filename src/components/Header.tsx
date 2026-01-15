@@ -48,8 +48,8 @@ const Header = () => {
             <Button variant="ghost" size="sm">
               Pieslēgties
             </Button>
-            <Button size="sm">
-              Pieteikties
+            <Button size="sm" asChild>
+              <Link to="/uznemsana">Pieteikties</Link>
             </Button>
           </div>
 
@@ -85,8 +85,8 @@ const Header = () => {
                 <Button variant="outline" className="w-full">
                   Pieslēgties
                 </Button>
-                <Button className="w-full">
-                  Pieteikties
+                <Button className="w-full" asChild>
+                  <Link to="/uznemsana">Pieteikties</Link>
                 </Button>
               </div>
             </nav>
