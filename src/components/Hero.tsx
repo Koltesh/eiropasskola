@@ -101,7 +101,7 @@ const Hero = () => {
                       <div className="text-sm text-muted-foreground">priekšmeti</div>
                     </div>
                     <div className="bg-muted rounded-xl p-4">
-                      <div className="text-2xl font-display font-bold text-foreground">A</div>
+                      <div className="text-2xl font-display font-bold text-foreground">9</div>
                       <div className="text-sm text-muted-foreground">vidējais vērtējums</div>
                     </div>
                   </div>
