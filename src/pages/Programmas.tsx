@@ -9,36 +9,42 @@ const ProgrammasPage = () => {
     {
       icon: BookOpen,
       title: "Vispārizglītojošais virziens",
+      slug: "visparizglitojosais",
       description: "Jauniešiem ar plašu interešu loku, kuri vēlas iegūt stabilu pamatu turpmākajām studijām un karjeras izvēlēm.",
       features: ["Plašs priekšmetu klāsts", "Sagatavošana dažādām studijām", "Elastīga izvēle"],
     },
     {
       icon: Beaker,
       title: "Dabaszinātņu virziens",
+      slug: "dabaszinatnu",
       description: "Jauniešiem, kuri plāno studēt medicīnu, veterināriju, farmāciju, uzturzinātni vai vēlas izprast cilvēka un dabas procesus.",
       features: ["Padziļināta bioloģija", "Ķīmija un fizika", "Praktiskie darbi"],
     },
     {
       icon: Briefcase,
       title: "Uzņēmējdarbības virziens",
+      slug: "uznemejdarbibas",
       description: "Jauniešiem, kuri interesējas par ekonomiku, finanšu pratību, uzņēmējdarbību un vēlas veidot savu biznesu.",
       features: ["Ekonomika", "Finanšu pratība", "Biznesa pamati"],
     },
     {
       icon: Languages,
       title: "Valodu virziens",
+      slug: "valodu",
       description: "Jauniešiem, kurus interesē valodas, komunikācija, psiholoģija, žurnālistika vai sociālās zinātnes.",
       features: ["Padziļinātas valodas", "Komunikācija", "Kultūras studijas"],
     },
     {
       icon: Code,
       title: "Matemātikas un IT virziens",
+      slug: "matematikas-it",
       description: "Jauniešiem, kuri vēlas apgūt programmēšanu vai plāno studēt datorzinātnes un augstāko matemātiku.",
       features: ["Programmēšana", "Datorzinātnes", "Augstākā matemātika"],
     },
     {
       icon: Calculator,
       title: "Fizikas un matemātikas virziens",
+      slug: "fizikas-matematikas",
       description: "Jauniešiem, kuri vēlas padziļināti izprast fiziku, apgūt matemātisko domāšanu vai plāno studēt inženierzinātnes.",
       features: ["Padziļināta fizika", "Matemātiskā domāšana", "Inženierzinātņu pamati"],
     },
@@ -115,9 +121,11 @@ const ProgrammasPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" size="sm" className="w-full group/btn">
-                    Uzzināt vairāk
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <Button variant="outline" size="sm" className="w-full group/btn" asChild>
+                    <Link to={`/programma/${program.slug}`}>
+                      Uzzināt vairāk
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                 </div>
               ))}
