@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -179,9 +180,11 @@ const ProgrammasPage = () => {
             <p className="text-lg text-muted-foreground">
               Sazinies ar mums, un mēs palīdzēsim izvēlēties piemērotāko programmu taviem mērķiem.
             </p>
-            <Button size="lg" className="group">
-              Pieteikties konsultācijai
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" className="group" asChild>
+              <Link to="/kontakti">
+                Pieteikties konsultācijai
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
           </div>
         </section>
