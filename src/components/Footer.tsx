@@ -1,4 +1,5 @@
-import { GraduationCap, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const Footer = () => {
   const links = {
@@ -34,11 +35,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-background/10">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-6">
-            <a href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-orange">
-                <GraduationCap className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="font-display font-bold text-xl text-background">ETV</span>
+            <a href="/" className="flex items-center">
+              <img src={logo} alt="Eiropas Tālmācības Vidusskola" className="h-10" />
             </a>
             <p className="text-background/60 max-w-sm">
               ETV ir akreditēta Latvijas tālmācības skola, kas piedāvā kvalitatīvu izglītību 7.–12. klasei.
