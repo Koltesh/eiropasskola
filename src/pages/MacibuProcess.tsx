@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -166,9 +167,11 @@ const MacibuProcessPage = () => {
             <p className="text-lg text-muted-foreground">
               Piesakies jau šodien un sāc savu ceļu ETV.
             </p>
-            <Button size="lg" className="group">
-              Pieteikties mācībām
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" className="group" asChild>
+              <Link to="/uznemsana">
+                Pieteikties mācībām
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
           </div>
         </section>

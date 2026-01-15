@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
@@ -38,9 +39,12 @@ const CTA = () => {
                 variant="hero" 
                 size="lg"
                 className="group bg-primary text-primary-foreground"
+                asChild
               >
-                Pieteikties mācībām
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Link to="/uznemsana">
+                  Pieteikties mācībām
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
             </div>
 
