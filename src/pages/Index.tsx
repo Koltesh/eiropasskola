@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
+import WhyETV from "@/components/WhyETV";
+import HowLearningWorks from "@/components/HowLearningWorks";
 import Programs from "@/components/Programs";
-import Testimonials from "@/components/Testimonials";
+import Events from "@/components/Events";
+import Accreditation from "@/components/Accreditation";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -12,9 +14,11 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Features />
+        <WhyETV />
+        <HowLearningWorks />
         <Programs />
-        <Testimonials />
+        <Events />
+        <Accreditation />
         <CTA />
       </main>
       <Footer />
