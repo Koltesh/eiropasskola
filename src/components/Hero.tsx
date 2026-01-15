@@ -3,7 +3,7 @@ import { ArrowRight, BookOpen, Users, Award } from "lucide-react";
 
 const Hero = () => {
   const stats = [
-    { icon: Users, value: "2,500+", label: "absolventi" },
+    { icon: Users, value: "12 000+", label: "absolventi" },
     { icon: BookOpen, value: "500+", label: "mācību materiāli" },
     { icon: Award, value: "Akreditēta", label: "līdz 2028" },
   ];
@@ -113,7 +113,7 @@ const Hero = () => {
                       <div className="w-8 h-8 rounded-full bg-orange border-2 border-card" />
                       <div className="w-8 h-8 rounded-full bg-navy border-2 border-card" />
                     </div>
-                    <span className="text-sm font-medium text-foreground">+1500 skolēni</span>
+                    <span className="text-sm font-medium text-foreground">~1000 skolēni gadā</span>
                   </div>
                 </div>
               </div>
