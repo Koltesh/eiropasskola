@@ -15,7 +15,7 @@ const Programs = () => {
         "E-mācību materiāli",
       ],
       price: "€65",
-      color: "teal",
+      color: "green",
     },
     {
       icon: GraduationCap,
@@ -29,7 +29,7 @@ const Programs = () => {
         "Augstskolu ieteikumi",
       ],
       price: "€55",
-      color: "gold",
+      color: "orange",
       popular: true,
     },
   ];
@@ -39,7 +39,7 @@ const Programs = () => {
       <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-teal/10 text-teal px-4 py-2 rounded-full">
+          <div className="inline-flex items-center gap-2 bg-green/10 text-green px-4 py-2 rounded-full">
             <GraduationCap className="w-4 h-4" />
             <span className="text-sm font-medium">Mācību programmas</span>
           </div>
@@ -57,11 +57,11 @@ const Programs = () => {
             <div
               key={program.title}
               className={`relative bg-card rounded-3xl p-8 transition-all duration-300 hover:shadow-elevated ${
-                program.popular ? 'ring-2 ring-primary shadow-gold' : 'shadow-card'
+                program.popular ? 'ring-2 ring-primary shadow-orange' : 'shadow-card'
               }`}
             >
               {program.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold shadow-gold">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold shadow-orange">
                   Populārākā izvēle
                 </div>
               )}
@@ -71,10 +71,10 @@ const Programs = () => {
                 <div className="flex items-start justify-between">
                   <div className="space-y-3">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${
-                      program.color === 'gold' ? 'bg-primary/10' : 'bg-teal/10'
+                      program.color === 'orange' ? 'bg-primary/10' : 'bg-green/10'
                     }`}>
                       <program.icon className={`w-7 h-7 ${
-                        program.color === 'gold' ? 'text-gold-dark' : 'text-teal'
+                        program.color === 'orange' ? 'text-orange-dark' : 'text-green'
                       }`} />
                     </div>
                     <div>
@@ -91,7 +91,7 @@ const Programs = () => {
                   {program.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
                       <CheckCircle className={`w-5 h-5 flex-shrink-0 ${
-                        program.color === 'gold' ? 'text-gold-dark' : 'text-teal'
+                        program.color === 'orange' ? 'text-orange-dark' : 'text-green'
                       }`} />
                       <span className="text-foreground">{feature}</span>
                     </li>

@@ -41,7 +41,7 @@ const Features = () => {
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-gold-dark px-4 py-2 rounded-full">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-orange-dark px-4 py-2 rounded-full">
             <span className="text-sm font-medium">Kāpēc ETV?</span>
           </div>
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground">
@@ -61,7 +61,7 @@ const Features = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                <feature.icon className="w-6 h-6 text-gold-dark" />
+                <feature.icon className="w-6 h-6 text-orange-dark" />
               </div>
               <h3 className="font-display text-xl font-bold text-foreground mb-2">
                 {feature.title}

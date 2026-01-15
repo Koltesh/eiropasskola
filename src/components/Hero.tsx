@@ -15,7 +15,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 70% 20%, hsl(40 95% 55% / 0.08) 0%, transparent 50%)'
+          background: 'radial-gradient(ellipse at 70% 20%, hsl(35 100% 46% / 0.08) 0%, transparent 50%)'
         }}
       />
       
@@ -24,7 +24,7 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8 animate-slide-up">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-gold-dark px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-orange-dark px-4 py-2 rounded-full">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium">Akreditēta tālmācības skola</span>
             </div>
@@ -55,7 +55,7 @@ const Hero = () => {
               {stats.map((stat) => (
                 <div key={stat.label} className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center">
-                    <stat.icon className="w-6 h-6 text-teal" />
+                    <stat.icon className="w-6 h-6 text-green" />
                   </div>
                   <div>
                     <div className="font-display font-bold text-xl text-foreground">{stat.value}</div>
@@ -73,7 +73,7 @@ const Hero = () => {
               <div className="bg-card rounded-3xl p-8 shadow-elevated animate-float">
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center shadow-gold">
+                    <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center shadow-orange">
                       <BookOpen className="w-7 h-7 text-primary-foreground" />
                     </div>
                     <div>
@@ -84,7 +84,7 @@ const Hero = () => {
                   
                   <div className="space-y-3">
                     <div className="h-3 bg-muted rounded-full overflow-hidden">
-                      <div className="h-full w-4/5 bg-gradient-to-r from-teal to-teal-light rounded-full" />
+                      <div className="h-full w-4/5 bg-gradient-to-r from-green to-green-light rounded-full" />
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Mācību progress</span>
@@ -106,7 +106,7 @@ const Hero = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-6 -right-6 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-gold animate-float" style={{ animationDelay: '1s' }}>
+              <div className="absolute -top-6 -right-6 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-orange animate-float" style={{ animationDelay: '1s' }}>
                 <div className="flex items-center gap-2">
                   <Award className="w-5 h-5" />
                   <span className="font-semibold text-sm">Akreditēta</span>
@@ -116,9 +116,9 @@ const Hero = () => {
               <div className="absolute -bottom-4 -left-6 bg-card rounded-2xl px-5 py-4 shadow-card animate-float" style={{ animationDelay: '2s' }}>
                 <div className="flex items-center gap-3">
                   <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-teal" />
-                    <div className="w-8 h-8 rounded-full bg-gold" />
-                    <div className="w-8 h-8 rounded-full bg-slate" />
+                    <div className="w-8 h-8 rounded-full bg-green" />
+                    <div className="w-8 h-8 rounded-full bg-orange" />
+                    <div className="w-8 h-8 rounded-full bg-navy" />
                   </div>
                   <span className="text-sm font-medium text-foreground">+1500 skolēni</span>
                 </div>

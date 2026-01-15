@@ -6,105 +6,104 @@
 
 @layer base {
   :root {
-    --background: 60 20% 99%;
-    --foreground: 220 25% 10%;
+    --background: 0 0% 100%;
+    --foreground: 212 67% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 10%;
+    --card-foreground: 212 67% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 10%;
+    --popover-foreground: 212 67% 15%;
 
-    --primary: 40 95% 55%;
-    --primary-foreground: 220 25% 10%;
+    --primary: 35 100% 46%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 175 60% 40%;
+    --secondary: 145 63% 39%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 212 30% 40%;
 
-    --accent: 175 60% 40%;
+    --accent: 145 63% 39%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 40 95% 55%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 35 100% 46%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --gold: 40 95% 55%;
-    --gold-light: 45 100% 70%;
-    --gold-dark: 38 90% 45%;
-    --slate: 220 25% 15%;
-    --slate-light: 220 20% 25%;
-    --teal: 175 60% 40%;
-    --teal-light: 175 50% 55%;
-    --cream: 45 30% 96%;
-    --grid-color: 220 15% 88%;
+    /* Custom tokens - ETV Brand Colors */
+    --orange: 35 100% 46%;
+    --orange-light: 38 100% 60%;
+    --orange-dark: 30 100% 40%;
+    --navy: 212 67% 15%;
+    --navy-light: 212 50% 25%;
+    --green: 145 63% 39%;
+    --green-light: 145 50% 50%;
+    --cream: 40 30% 97%;
+    --grid-color: 210 20% 92%;
 
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(40 95% 55%), hsl(45 100% 65%));
-    --gradient-dark: linear-gradient(180deg, hsl(220 25% 12%), hsl(220 25% 8%));
-    --gradient-hero: linear-gradient(135deg, hsl(45 30% 98%) 0%, hsl(40 40% 95%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(35 100% 46%), hsl(38 100% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(40 30% 97%) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(220 25% 10% / 0.08);
-    --shadow-card: 0 8px 32px -8px hsl(220 25% 10% / 0.12);
-    --shadow-gold: 0 8px 24px -4px hsl(40 95% 55% / 0.35);
-    --shadow-elevated: 0 20px 50px -12px hsl(220 25% 10% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(212 67% 15% / 0.08);
+    --shadow-card: 0 8px 32px -8px hsl(212 67% 15% / 0.12);
+    --shadow-orange: 0 8px 24px -4px hsl(35 100% 46% / 0.35);
+    --shadow-elevated: 0 20px 50px -12px hsl(212 67% 15% / 0.2);
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 212 67% 15%;
+    --sidebar-primary: 212 67% 15%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 212 67% 15%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 35 100% 46%;
   }
 
   .dark {
-    --background: 220 25% 8%;
-    --foreground: 60 20% 98%;
+    --background: 212 67% 10%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 25% 12%;
-    --card-foreground: 60 20% 98%;
+    --card: 212 60% 14%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 25% 12%;
-    --popover-foreground: 60 20% 98%;
+    --popover: 212 60% 14%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 40 95% 55%;
-    --primary-foreground: 220 25% 10%;
+    --primary: 35 100% 46%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 175 60% 40%;
+    --secondary: 145 63% 39%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 18%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 212 40% 18%;
+    --muted-foreground: 210 15% 60%;
 
-    --accent: 175 60% 40%;
+    --accent: 145 63% 39%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 40 95% 55%;
+    --border: 212 40% 20%;
+    --input: 212 40% 20%;
+    --ring: 35 100% 46%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 212 67% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 35 100% 46%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 212 40% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 212 40% 20%;
+    --sidebar-ring: 35 100% 46%;
   }
 }
 
@@ -126,12 +125,12 @@
 @layer components {
   .btn-primary {
     @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300;
-    box-shadow: var(--shadow-gold);
+    box-shadow: var(--shadow-orange);
   }
 
   .btn-primary:hover {
     @apply scale-105;
-    box-shadow: 0 12px 32px -4px hsl(40 95% 55% / 0.45);
+    box-shadow: 0 12px 32px -4px hsl(35 100% 46% / 0.45);
   }
 
   .btn-secondary {
@@ -139,15 +138,15 @@
   }
 
   .btn-secondary:hover {
-    @apply scale-105 bg-teal-light;
+    @apply scale-105 bg-green-light;
   }
 
   .btn-outline {
-    @apply border-2 border-slate bg-transparent text-slate font-semibold px-6 py-3 rounded-xl transition-all duration-300;
+    @apply border-2 border-navy bg-transparent text-navy font-semibold px-6 py-3 rounded-xl transition-all duration-300;
   }
 
   .btn-outline:hover {
-    @apply bg-slate text-background;
+    @apply bg-navy text-background;
   }
 
   .card-elevated {
@@ -168,7 +167,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-dark)) 100%);
+    background: linear-gradient(135deg, hsl(var(--orange)) 0%, hsl(var(--orange-dark)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

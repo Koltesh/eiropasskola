@@ -29,13 +29,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate text-background/80 pt-16 pb-8">
+    <footer className="bg-navy text-background/80 pt-16 pb-8">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-background/10">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-6">
             <a href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-gold">
+              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-orange">
                 <GraduationCap className="w-6 h-6 text-primary-foreground" />
               </div>
               <span className="font-display font-bold text-xl text-background">ETV</span>
