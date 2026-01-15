@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, GraduationCap, BookOpen, Beaker, Briefcase, Languages, Code, Calculator, Laptop, Users } from "lucide-react";
 
@@ -6,31 +7,37 @@ const Programs = () => {
     {
       icon: BookOpen,
       title: "Vispārizglītojošais virziens",
+      slug: "visparizglitojosais",
       description: "Jauniešiem ar plašu interešu loku, kuri vēlas iegūt stabilu pamatu turpmākajām studijām un karjeras izvēlēm.",
     },
     {
       icon: Beaker,
       title: "Dabaszinātņu virziens",
+      slug: "dabaszinatnu",
       description: "Jauniešiem, kuri plāno studēt medicīnu, veterināriju, farmāciju, uzturzinātni vai vēlas izprast cilvēka un dabas procesus.",
     },
     {
       icon: Briefcase,
       title: "Uzņēmējdarbības virziens",
+      slug: "uznemejdarbibas",
       description: "Jauniešiem, kuri interesējas par ekonomiku, finanšu pratību, uzņēmējdarbību un vēlas veidot savu biznesu.",
     },
     {
       icon: Languages,
       title: "Valodu virziens",
+      slug: "valodu",
       description: "Jauniešiem, kurus interesē valodas, komunikācija, psiholoģija, žurnālistika vai sociālās zinātnes.",
     },
     {
       icon: Code,
       title: "Matemātikas un IT virziens",
+      slug: "matematikas-it",
       description: "Jauniešiem, kuri vēlas apgūt programmēšanu vai plāno studēt datorzinātnes un augstāko matemātiku.",
     },
     {
       icon: Calculator,
       title: "Fizikas un matemātikas virziens",
+      slug: "fizikas-matematikas",
       description: "Jauniešiem, kuri vēlas padziļināti izprast fiziku, apgūt matemātisko domāšanu vai plāno studēt inženierzinātnes.",
     },
   ];
@@ -78,20 +85,25 @@ const Programs = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {highSchoolPrograms.map((program) => (
-              <div
+              <Link
                 key={program.title}
-                className="bg-card rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 group"
+                to={`/programma/${program.slug}`}
+                className="bg-card rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 group cursor-pointer"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <program.icon className="w-6 h-6 text-orange-dark" />
                 </div>
-                <h4 className="font-display text-lg font-bold text-foreground mb-2">
+                <h4 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {program.title}
                 </h4>
                 <p className="text-muted-foreground text-sm">
                   {program.description}
                 </p>
-              </div>
+                <div className="flex items-center gap-2 text-sm text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Uzzināt vairāk
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
