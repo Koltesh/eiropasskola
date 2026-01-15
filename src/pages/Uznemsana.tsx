@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, FileText, CreditCard, MapPin } from "lucide-react";
-
+import ApplicationForm from "@/components/ApplicationForm";
+import { Link } from "react-router-dom";
 const UznemsanaPage = () => {
   const steps = [
     {
@@ -64,9 +65,11 @@ const UznemsanaPage = () => {
             <p className="text-xl text-muted-foreground">
               Vienkārši soļi, lai uzsāktu mācības ETV. Mēs palīdzēsim katrā solī.
             </p>
-            <Button size="lg" className="group">
-              Pieteikties tagad
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" className="group" asChild>
+              <a href="#pieteikums">
+                Pieteikties tagad
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
         </section>
@@ -178,24 +181,40 @@ const UznemsanaPage = () => {
           </div>
         </section>
 
+        {/* Application Form */}
+        <section id="pieteikums" className="py-16 lg:py-24 bg-muted/50">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-green/10 text-green px-4 py-2 rounded-full mb-4">
+                <FileText className="w-4 h-4" />
+                <span className="text-sm font-medium">Pieteikums</span>
+              </div>
+              <h2 className="font-display text-3xl font-bold text-foreground">
+                Piesakies mācībām
+              </h2>
+              <p className="text-muted-foreground mt-2 max-w-xl mx-auto">
+                Aizpildi anketu un mēs sazināsimies ar tevi 1-2 darba dienu laikā.
+              </p>
+            </div>
+            
+            <div className="max-w-2xl mx-auto">
+              <ApplicationForm />
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
-        <section className="py-16 lg:py-24 bg-muted/50">
+        <section className="py-16 lg:py-24">
           <div className="container mx-auto text-center max-w-2xl space-y-6">
             <h2 className="font-display text-3xl font-bold text-foreground">
-              Gatavs sākt?
+              Jautājumi?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Piesakies jau šodien vai sazinies ar mums, lai uzzinātu vairāk.
+              Ja tev ir jautājumi pirms pieteikšanās, sazinies ar mums.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                Pieteikties mācībām
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Sazināties ar mums
-              </Button>
-            </div>
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/kontakti">Sazināties ar mums</Link>
+            </Button>
           </div>
         </section>
       </main>
