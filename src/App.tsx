@@ -12,6 +12,7 @@ import Kontakti from "./pages/Kontakti";
 import Aktualitates from "./pages/Aktualitates";
 import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
+import ProgrammaVirziens from "./pages/ProgrammaVirziens";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/programmas" element={<Programmas />} />
+          <Route path="/programma/:slug" element={<ProgrammaVirziens />} />
           <Route path="/par-skolu" element={<ParSkolu />} />
           <Route path="/macibu-process" element={<MacibuProcess />} />
           <Route path="/uznemsana" element={<Uznemsana />} />
