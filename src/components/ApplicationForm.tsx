@@ -50,16 +50,51 @@ const ApplicationForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const programLabel = programs.find(p => p.value === formData.program)?.label || formData.program;
+      
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-form-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+          },
+          body: JSON.stringify({
+            type: "application",
+            parentName: formData.parentName,
+            studentName: formData.studentName,
+            email: formData.email,
+            phone: formData.phone,
+            program: programLabel,
+            grade: formData.grade,
+            message: formData.message,
+          }),
+        }
+      );
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "Pieteikums nosūtīts!",
-      description: "Mēs sazināsimies ar jums 1-2 darba dienu laikā.",
-    });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to send application");
+      }
+
+      setIsSubmitted(true);
+      toast({
+        title: "Pieteikums nosūtīts!",
+        description: "Mēs sazināsimies ar jums 1-2 darba dienu laikā.",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Kļūda",
+        description: "Neizdevās nosūtīt pieteikumu. Lūdzu, mēģiniet vēlreiz.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {

@@ -1,9 +1,80 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const KontaktiPage = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Lūdzu aizpildiet visus laukus",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-form-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+          },
+          body: JSON.stringify({
+            type: "contact",
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to send message");
+      }
+
+      toast({
+        title: "Ziņojums nosūtīts!",
+        description: "Mēs sazināsimies ar jums pēc iespējas ātrāk.",
+      });
+
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Kļūda",
+        description: "Neizdevās nosūtīt ziņojumu. Lūdzu, mēģiniet vēlreiz.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -74,44 +145,53 @@ const KontaktiPage = () => {
           </div>
         </section>
 
-        {/* Contact Form Placeholder */}
+        {/* Contact Form */}
         <section className="py-16 lg:py-24 bg-muted/50">
           <div className="container mx-auto">
             <div className="max-w-2xl mx-auto">
-              <div className="bg-card rounded-2xl p-8 shadow-soft">
+              <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 shadow-soft">
                 <h2 className="font-display text-2xl font-bold text-foreground mb-6 text-center">
                   Uzraksti mums
                 </h2>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Vārds</label>
-                    <input 
-                      type="text" 
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                    <label className="block text-sm font-medium text-foreground mb-2">Vārds *</label>
+                    <Input 
+                      type="text"
+                      value={formData.name}
+                      onChange={(e) => handleChange("name", e.target.value)}
                       placeholder="Tavs vārds"
+                      className="rounded-xl"
+                      required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">E-pasts</label>
-                    <input 
-                      type="email" 
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                    <label className="block text-sm font-medium text-foreground mb-2">E-pasts *</label>
+                    <Input 
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleChange("email", e.target.value)}
                       placeholder="tavs@epasts.lv"
+                      className="rounded-xl"
+                      required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Ziņojums</label>
-                    <textarea 
+                    <label className="block text-sm font-medium text-foreground mb-2">Ziņojums *</label>
+                    <Textarea 
+                      value={formData.message}
+                      onChange={(e) => handleChange("message", e.target.value)}
                       rows={4}
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                      className="rounded-xl resize-none"
                       placeholder="Tavs jautājums vai ziņojums..."
+                      required
                     />
                   </div>
-                  <Button className="w-full" size="lg">
-                    Nosūtīt ziņojumu
+                  <Button className="w-full" size="lg" disabled={isSubmitting}>
+                    {isSubmitting ? "Sūta..." : "Nosūtīt ziņojumu"}
                   </Button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </section>
