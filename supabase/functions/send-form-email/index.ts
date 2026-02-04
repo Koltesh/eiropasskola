@@ -90,7 +90,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "ETV Vidusskola <onboarding@resend.dev>",
-      to: ["etv@eiropasskola.lv"],
+      to: ["martins.tirzitis@gmail.com"],
       subject: subject,
       html: htmlContent,
       replyTo: formData.email,
