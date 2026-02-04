@@ -116,7 +116,7 @@ const Hero = () => {
                       <div className="w-8 h-8 rounded-full bg-orange border-2 border-card" />
                       <div className="w-8 h-8 rounded-full bg-navy border-2 border-card" />
                     </div>
-                    <span className="text-sm font-medium text-foreground">~1000 skolēni gadā</span>
+                    <span className="text-sm font-medium text-foreground">~2000 skolēni gadā</span>
                   </div>
                 </div>
               </div>
