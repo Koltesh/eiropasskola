@@ -45,8 +45,8 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              Pieslēgties
+            <Button variant="ghost" size="sm" asChild>
+              <a href="https://klass.sdo.lv/" target="_blank" rel="noopener noreferrer">Pieslēgties</a>
             </Button>
             <Button size="sm" asChild>
               <Link to="/uznemsana">Pieteikties</Link>
@@ -82,8 +82,8 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col gap-2 mt-4 px-4">
-                <Button variant="outline" className="w-full">
-                  Pieslēgties
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="https://klass.sdo.lv/" target="_blank" rel="noopener noreferrer">Pieslēgties</a>
                 </Button>
                 <Button className="w-full" asChild>
                   <Link to="/uznemsana">Pieteikties</Link>
