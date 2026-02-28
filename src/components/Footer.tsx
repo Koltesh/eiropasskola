@@ -48,10 +48,10 @@ const Footer = () => {
   ];
 
   const socials = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Facebook, href: "https://www.facebook.com/eiropasskola", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/eiropasskola/", label: "Instagram" },
+    { icon: Youtube, href: "https://www.youtube.com/@eiropasskola/videos", label: "YouTube" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/eiropas-t%C4%81lm%C4%81c%C4%ABbas-vidusskola/posts/?feedView=all", label: "LinkedIn" },
   ];
 
   return (
