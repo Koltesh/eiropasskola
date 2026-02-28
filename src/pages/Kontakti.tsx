@@ -203,11 +203,17 @@ const KontaktiPage = () => {
               <h2 className="font-display text-2xl font-bold text-foreground mb-6 text-center">
                 Kā mūs atrast
               </h2>
-              <div className="bg-muted rounded-2xl h-80 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">Karte tiks pievienota drīzumā</p>
-                </div>
+              <div className="rounded-2xl overflow-hidden h-80">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2175.8!2d24.1589!3d56.9496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e0b0b0b1%3A0x0!2zVmFsxJNyaWphcyBTZWlsZXMgaWVsYSAxIEstNCwgUsSwZ2E!5e0!3m2!1slv!2slv!4v1700000000000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="ETV Vidusskola atrašanās vieta"
+                />
               </div>
             </div>
           </div>
