@@ -156,11 +156,11 @@ const BrivibasDzivesstils = () => {
         <div className="container mx-auto relative z-10 max-w-7xl px-4">
           <div className="relative min-h-[640px] lg:min-h-[720px] flex items-center justify-center">
 
-            {/* MacBook — top left, floating behind text */}
+            {/* MacBook — top left */}
             <img
               src={macbookAsset.url}
               alt="MacBook — jūnija balva"
-              className="hidden md:block absolute top-0 -left-4 lg:left-0 w-[280px] lg:w-[420px] xl:w-[480px] opacity-95 drop-shadow-2xl rotate-[-6deg] z-0 pointer-events-none select-none"
+              className="hidden md:block absolute -top-4 -left-12 lg:-left-16 xl:-left-20 w-[240px] lg:w-[340px] xl:w-[400px] drop-shadow-2xl rotate-[-6deg] z-0 pointer-events-none select-none"
               loading="eager"
             />
 
@@ -168,7 +168,7 @@ const BrivibasDzivesstils = () => {
             <img
               src={airpodsAsset.url}
               alt="AirPods — augusta balva"
-              className="hidden md:block absolute bottom-0 left-8 lg:left-24 w-[140px] lg:w-[200px] xl:w-[230px] drop-shadow-2xl rotate-[-12deg] z-20 pointer-events-none select-none"
+              className="hidden md:block absolute -bottom-4 -left-6 lg:left-4 w-[120px] lg:w-[170px] xl:w-[200px] drop-shadow-2xl rotate-[-12deg] z-0 pointer-events-none select-none"
               loading="eager"
             />
 
@@ -176,12 +176,21 @@ const BrivibasDzivesstils = () => {
             <img
               src={iphoneAsset.url}
               alt="iPhone — jūlija balva"
-              className="hidden md:block absolute top-8 right-0 lg:right-4 w-[200px] lg:w-[300px] xl:w-[340px] drop-shadow-2xl rotate-[8deg] z-20 pointer-events-none select-none"
+              className="hidden md:block absolute top-2 -right-10 lg:-right-12 xl:-right-16 w-[180px] lg:w-[260px] xl:w-[300px] drop-shadow-2xl rotate-[8deg] z-0 pointer-events-none select-none"
               loading="eager"
             />
 
-            {/* Center text — sits in the negative space between products */}
-            <div className="relative z-10 max-w-2xl text-center space-y-6 px-2 py-12 md:py-20">
+            {/* Center text — readable card sitting above products */}
+            <div className="relative z-10 max-w-2xl text-center space-y-6 px-6 py-12 md:py-16">
+              {/* soft glow backdrop to keep text legible over product imagery */}
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-10 rounded-[3rem]"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, hsl(40 40% 98% / 0.92) 0%, hsl(40 40% 98% / 0.75) 45%, hsl(40 40% 98% / 0) 75%)",
+                }}
+              />
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight">
                 Mācies no <span className="text-primary">jebkuras vietas</span>
                 <span className="block mt-2 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold text-foreground/80">
