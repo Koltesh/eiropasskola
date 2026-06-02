@@ -9,9 +9,6 @@ import {
   Beaker,
   Calculator,
   BookOpen,
-  Award,
-  GraduationCap,
-  Compass,
   Laptop,
   Smartphone,
   Headphones,
@@ -28,9 +25,12 @@ import {
   Quote,
   Sparkles,
   MapPin,
-  Wifi,
-  Coffee,
-  Plane,
+  Clock,
+  Dumbbell,
+  CheckCircle,
+  Monitor,
+  HeartHandshake,
+  PartyPopper,
 } from "lucide-react";
 
 const APPLY_URL = "https://eiropasskola.lv/uznemsana#pieteikums";
@@ -52,21 +52,21 @@ const trustStats = [
   { icon: UserCheck, value: "100%", label: "profesionāli pedagogi" },
 ];
 
-const freedomCards = [
+const lifestyleBenefits = [
   {
     icon: MapPin,
     title: "Mācies no jebkuras vietas",
-    desc: "No kafejnīcas, laukiem vai ceļojuma — mācības sev ērtā vietā un laikā.",
+    desc: "Latvijā vai ārzemēs — mācību vide pieejama 24/7 no jebkuras ierīces.",
   },
   {
-    icon: Wifi,
-    title: "100% elastīgs grafiks",
-    desc: "Seko mācību plānam, kad tas tev der. Sports, darbs, vaļasprieki — viss iet kopā.",
+    icon: Clock,
+    title: "Elastīgs grafiks",
+    desc: "Pats plāno savu dienu. Apvieno mācības ar sportu, darbu vai hobijiem.",
   },
   {
-    icon: Coffee,
-    title: "Dzīvo savu dzīvi",
-    desc: "Neatkarīgs no transporta un stundu saraksta. Tu pats plāno savu dienu.",
+    icon: Dumbbell,
+    title: "Sportistu stipendija",
+    desc: "Aktīviem sportistiem pieejams stipendiju fonds 2000 EUR katru semestri.",
   },
 ];
 
@@ -91,21 +91,26 @@ const prizeValueProps = [
   },
 ];
 
-const lifestyleScenes = [
+const howItWorksSteps = [
   {
-    icon: Coffee,
-    title: "Kafejnīcā",
-    desc: "Ieraksti stundu ar MacBook, dzer kafiju, mācies savā ritmā.",
+    icon: CheckCircle,
+    title: "Izvēlies programmu",
+    desc: "6 mācību virzieni — no IT un dabaszinātnēm līdz valodām un uzņēmējdarbībai.",
   },
   {
-    icon: Plane,
-    title: "Ceļojumā",
-    desc: "Nepalaid garām nevienu nodarbību — ar iPhone mācības ir vienmēr līdzi.",
+    icon: Monitor,
+    title: "Mācies tiešsaistē",
+    desc: "Strukturēts grafiks, skolotāju vadībā, ar iespēju mācīties jebkurā laikā.",
   },
   {
-    icon: Wifi,
-    title: "Mājās",
-    desc: "Dziļa koncentrēšanās ar AirPods — bez distrakcijām, pilnīga fokusā.",
+    icon: HeartHandshake,
+    title: "Saņem atbalstu",
+    desc: "Mentori, konsultācijas, karjeras padomi un pat psihologa atbalsts.",
+  },
+  {
+    icon: PartyPopper,
+    title: "Satiec draugus klātienē",
+    desc: "16+ pasākumi gadā — ekskursijas, nometnes, sporta dienas un kopā būšanas.",
   },
 ];
 
@@ -117,7 +122,12 @@ const steps = [
 
 const testimonials = [
   {
-    quote: "Es mācos no Maljorkas šovasar — stundas tiešsaistē, eksāmeni rudenī. ETV ir pilnīga brīvība.",
+    quote: "Varu trenēties katru dienu un vienlaikus mācīties. ETV ir mainījusi manu dzīvi.",
+    name: "Kārlis",
+    meta: "11. klase, Uzņēmējdarbība",
+  },
+  {
+    quote: "Es mācos no Maljorkas šovasar — stundas tiešsaistē, eksāmeni rudenī. Pilnīga brīvība.",
     name: "Ritvars",
     meta: "11. klase, Uzņēmējdarbība",
   },
@@ -125,11 +135,6 @@ const testimonials = [
     quote: "Man ir vieglākais grafiks starp visiem draugiem. Treniņi no plkst. 14, mācības vakarā — un nekas necieš.",
     name: "Paula",
     meta: "10. klase, Valodas",
-  },
-  {
-    quote: "Nevaru iedomāties sevi citur. ETV man dod laiku darboties ar savu mūzikas projektu un saglabāt labas atzīmes.",
-    name: "Edgars",
-    meta: "12. klase, IT virziens",
   },
 ];
 
@@ -156,12 +161,12 @@ const BrivibasDzivesstils = () => {
               <span className="text-primary">un laimē tehnoloģijas, kas iet kopā ar tavu dzīvesveidu</span>
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Piesakies ETV, kur mācīties var no kafejnīcas, sporta nometnes vai ārzemēm — un laimē tehnoloģijas, kas to padara vēl vienkāršāku.
+              Elastīgs grafiks. Mācies no kafejnīcas, sporta nometnes vai ārzemēm. Piesakies tagad un piedalies vasaras balvu izlozē.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
               <Button variant="hero" asChild className="group">
                 <a href={APPLY_URL}>
-                  Iegūsti brīvību — piesakies un laimē
+                  Iegūsti brīvību — piesakies
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -175,7 +180,7 @@ const BrivibasDzivesstils = () => {
           <div className="mt-12 max-w-5xl mx-auto">
             <img
               src={heroAsset.url}
-              alt="Iestājies ETV un laimē visu vasaru — MacBook, iPhone, AirPods balvas"
+              alt="PHOTO: young person studying on laptop in a café or outdoors"
               className="w-full h-auto rounded-2xl shadow-card"
               loading="eager"
             />
@@ -199,6 +204,9 @@ const BrivibasDzivesstils = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Tieši tās tehnoloģijas, kas padara tālmācību vēl ērtāku.
+            </p>
           </div>
         </div>
       </section>
@@ -222,55 +230,160 @@ const BrivibasDzivesstils = () => {
         </div>
       </section>
 
-      {/* FREEDOM & LIFESTYLE — WHY THIS MATTERS */}
-      <section className="py-20 lg:py-28 bg-card/60 border-y border-border">
+      {/* LIFESTYLE BENEFITS */}
+      <section className="py-20 lg:py-28">
         <div className="container mx-auto max-w-6xl px-4">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
             <h2 className="font-display text-3xl lg:text-4xl font-bold">
-              Skola, kas pielāgojas tavam dzīvesveidam
+              Tava dzīve, tavi noteikumi
             </h2>
-            <p className="text-muted-foreground mt-3">
+            <p className="text-muted-foreground">
               Nevajag izvēlēties starp mācībām un dzīvi — ETV dod tev abu pasaulju labāko.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {freedomCards.map((c) => (
+            {lifestyleBenefits.map((c) => (
               <div
                 key={c.title}
-                className="bg-background rounded-2xl p-7 border border-border shadow-soft"
+                className="relative bg-card rounded-2xl p-8 border border-border shadow-card text-center overflow-hidden"
               >
-                <div className="w-12 h-12 rounded-xl bg-[hsl(var(--green))]/10 flex items-center justify-center mb-4">
-                  <c.icon className="w-6 h-6 text-[hsl(var(--green))]" />
+                <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-primary to-[hsl(var(--orange-light))] flex items-center justify-center mb-5 shadow-orange">
+                  <c.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{c.title}</h3>
-                <p className="text-muted-foreground">{c.desc}</p>
+                <p className="text-muted-foreground text-sm">{c.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* LIFESTYLE SCENES */}
+      {/* SPORTS STIPEND HIGHLIGHT */}
+      <section className="relative overflow-hidden bg-primary text-primary-foreground py-20 lg:py-28">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 20% 100%, hsl(35 100% 30% / 0.3) 0%, transparent 60%)",
+          }}
+        />
+        <div className="container mx-auto max-w-6xl px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full">
+                <Dumbbell className="w-4 h-4" />
+                <span className="text-sm font-semibold">Sportistiem</span>
+              </div>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold leading-tight">
+                Sporto un saņem stipendiju
+              </h2>
+              <p className="text-primary-foreground/90 text-lg">
+                ETV sportistiem pieejams stipendiju fonds <strong>2000 EUR katru semestri</strong>. Mācības iespējams apvienot ar treniņiem, sacensībām un sporta nometnēm, jo laicīgi ir zināms, kas jādara un kādi ir termiņi.
+              </p>
+              <Button variant="secondary" asChild className="group w-fit">
+                <a href="https://eiropasskola.lv/uznemsana#stipendija">
+                  Uzzināt vairāk par stipendiju
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden bg-white/10 aspect-video flex items-center justify-center">
+              <p className="text-white/60 font-medium">PHOTO: young athlete training</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRIZE DRAW */}
+      <section className="py-20 lg:py-28 bg-card/60 border-y border-border">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-orange-dark px-4 py-2 rounded-full">
+              <Sparkles className="w-4 h-4" />
+              <span className="text-sm font-semibold">Balvu izloze</span>
+            </div>
+            <h2 className="font-display text-3xl lg:text-4xl font-bold">
+              Laimē tehnoloģijas savai vasarai
+            </h2>
+            <p className="text-muted-foreground">
+              Piesakies ETV un piedalies vasaras balvu izlozē. MacBook, iPhone, AirPods — tieši tas, kas vajadzīgs aktīvam, mobilam studentam.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {prizeValueProps.map((p) => (
+              <div
+                key={p.month}
+                className="relative bg-background rounded-2xl p-8 border border-border shadow-card text-center overflow-hidden"
+              >
+                <div className="absolute top-4 right-4 text-xs font-semibold bg-primary text-primary-foreground px-3 py-1 rounded-full">
+                  {p.month}
+                </div>
+                <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-primary to-[hsl(var(--orange-light))] flex items-center justify-center mb-5 shadow-orange">
+                  <p.icon className="w-10 h-10 text-primary-foreground" />
+                </div>
+                <div className="font-display text-2xl font-bold">{p.prize}</div>
+                <p className="text-sm text-muted-foreground mt-2">{p.tagline}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4 mb-10 max-w-4xl mx-auto">
+            {steps.map((s, i) => (
+              <div key={s} className="flex items-start gap-3 bg-background rounded-xl p-5 border border-border">
+                <div className="w-9 h-9 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center shrink-0">
+                  {i + 1}
+                </div>
+                <p className="font-medium pt-1">{s}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center space-y-3">
+            <Button variant="hero" asChild className="group">
+              <a href={APPLY_URL}>
+                Piesakies un laimē
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+            <div>
+              <a
+                href={RULES_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary underline"
+              >
+                Izlozes noteikumi pieejami šeit
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
             <h2 className="font-display text-3xl lg:text-4xl font-bold">
-              Mācības, kas iet kopā ar tavu ikdienu
+              Kā notiek mācības ETV?
             </h2>
             <p className="text-muted-foreground">
-              Iedomājies: mācībām nav jānotiek klasē. Tās notiek, kur tu esi.
+              Strukturēta tālmācība ar reālu atbalstu — neesi viens pats.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {lifestyleScenes.map((s) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {howItWorksSteps.map((s, i) => (
               <div
                 key={s.title}
-                className="relative bg-card rounded-2xl p-8 border border-border shadow-card text-center overflow-hidden"
+                className="relative bg-card rounded-2xl p-7 border border-border shadow-soft text-center"
               >
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-primary to-[hsl(var(--orange-light))] flex items-center justify-center mb-5 shadow-orange">
-                  <s.icon className="w-8 h-8 text-primary-foreground" />
+                <div className="absolute top-4 left-4 text-xs font-bold text-muted-foreground/40">
+                  0{i + 1}
                 </div>
-                <h3 className="font-display text-xl font-bold mb-2">{s.title}</h3>
+                <div className="w-14 h-14 mx-auto rounded-2xl bg-[hsl(var(--navy))]/5 flex items-center justify-center mb-5">
+                  <s.icon className="w-7 h-7 text-[hsl(var(--navy))]" />
+                </div>
+                <h3 className="font-display text-lg font-bold mb-2">{s.title}</h3>
                 <p className="text-muted-foreground text-sm">{s.desc}</p>
               </div>
             ))}
@@ -309,78 +422,12 @@ const BrivibasDzivesstils = () => {
         </div>
       </section>
 
-      {/* PRIZE DRAW — WITH LIFESTYLE ANGLE */}
+      {/* TESTIMONIALS */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto max-w-6xl px-4">
-          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-orange-dark px-4 py-2 rounded-full">
-              <Sparkles className="w-4 h-4" />
-              <span className="text-sm font-semibold">Balvu izloze</span>
-            </div>
-            <h2 className="font-display text-3xl lg:text-4xl font-bold">
-              Tehnoloģijas, kas padara brīvību reālu
-            </h2>
-            <p className="text-muted-foreground">
-              Katru vasaras mēnesi izlozējam vienu balvu starp jaunajiem ETV skolēniem. Šīs tehnoloģijas nav tikai balvas — tās ir tavas jaunās mācību un dzīves rīks.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {prizeValueProps.map((p) => (
-              <div
-                key={p.month}
-                className="relative bg-card rounded-2xl p-8 border border-border shadow-card text-center overflow-hidden"
-              >
-                <div className="absolute top-4 right-4 text-xs font-semibold bg-primary text-primary-foreground px-3 py-1 rounded-full">
-                  {p.month}
-                </div>
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-primary to-[hsl(var(--orange-light))] flex items-center justify-center mb-5 shadow-orange">
-                  <p.icon className="w-10 h-10 text-primary-foreground" />
-                </div>
-                <div className="font-display text-2xl font-bold">{p.prize}</div>
-                <p className="text-sm text-muted-foreground mt-2">{p.tagline}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-4 mb-10 max-w-4xl mx-auto">
-            {steps.map((s, i) => (
-              <div key={s} className="flex items-start gap-3 bg-card rounded-xl p-5 border border-border">
-                <div className="w-9 h-9 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center shrink-0">
-                  {i + 1}
-                </div>
-                <p className="font-medium pt-1">{s}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center space-y-3">
-            <Button variant="hero" asChild className="group">
-              <a href={APPLY_URL}>
-                Piesakies un piedalies izlozē
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-            <div>
-              <a
-                href={RULES_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-primary underline"
-              >
-                Izlozes noteikumi pieejami šeit
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS — LIFESTYLE FOCUSED */}
-      <section className="py-20 lg:py-28 bg-card/60 border-y border-border">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
             <h2 className="font-display text-3xl lg:text-4xl font-bold">Ko saka mūsu skolēni</h2>
-            <p className="text-muted-foreground mt-3">
+            <p className="text-muted-foreground">
               Brīvība nav tikai solījums — skaties, kā citi to jau dzīvo.
             </p>
           </div>
@@ -388,7 +435,7 @@ const BrivibasDzivesstils = () => {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="bg-background rounded-2xl p-7 border border-border shadow-soft flex flex-col"
+                className="bg-card rounded-2xl p-7 border border-border shadow-soft flex flex-col"
               >
                 <Quote className="w-8 h-8 text-primary mb-4" />
                 <p className="text-foreground/90 italic flex-1">"{t.quote}"</p>
@@ -403,18 +450,18 @@ const BrivibasDzivesstils = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section id="kontakti" className="py-20 lg:py-28">
+      <section id="kontakti" className="py-20 lg:py-28 bg-card/60 border-y border-border">
         <div className="container mx-auto max-w-3xl px-4 text-center space-y-6">
           <h2 className="font-display text-3xl lg:text-5xl font-bold">
-            Gatavs dzīvot brīvāk?
+            Gatavs apvienot mācības ar savu dzīvi?
           </h2>
           <p className="text-lg text-muted-foreground">
-            Piesakies mācībām vai sazinies ar mums — atbildēsim uz jautājumiem un ieteiksim piemērotāko programmu.
+            Piesakies mācībām ETV un piedalies vasaras balvu izlozē.
           </p>
           <div className="pt-2">
             <Button variant="hero" size="xl" asChild className="group">
               <a href={APPLY_URL}>
-                Iegūsti brīvību — piesakies un laimē
+                Piesakies tagad
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
