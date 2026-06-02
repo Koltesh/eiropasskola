@@ -152,10 +152,6 @@ const BrivibasDzivesstils = () => {
         />
         <div className="container mx-auto relative z-10 max-w-6xl px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-orange-dark px-4 py-2 rounded-full">
-              <Sparkles className="w-4 h-4" />
-              <span className="text-sm font-semibold">Vasaras kampaņa 2025</span>
-            </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
               Mācies no jebkuras vietas —{" "}
               <span className="text-primary">un laimē tehnoloģijas, kas iet kopā ar tavu dzīvesveidu</span>
