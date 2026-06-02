@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import heroAsset from "@/assets/iestajies-etv-laime-hero.png.asset.json";
+import macbookAsset from "@/assets/macbook-neo.png.asset.json";
+import iphoneAsset from "@/assets/iphone-17e.png.asset.json";
+import airpodsAsset from "@/assets/airpods-4.png.asset.json";
 import {
   ArrowRight,
   Briefcase,
@@ -142,53 +144,82 @@ const BrivibasDzivesstils = () => {
   return (
     <div className="min-h-screen bg-[hsl(40_40%_98%)] text-foreground font-sans">
       {/* HERO */}
-      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28">
+      <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at 80% 0%, hsl(35 100% 46% / 0.12) 0%, transparent 55%)",
+              "radial-gradient(ellipse at 50% 30%, hsl(35 100% 46% / 0.14) 0%, transparent 60%)",
           }}
         />
-        <div className="container mx-auto relative z-10 max-w-6xl px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-              Mācies no jebkuras vietas —{" "}
-              <span className="text-primary">un laimē tehnoloģijas, kas iet kopā ar tavu dzīvesveidu</span>
-            </h1>
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Elastīgs grafiks. Mācies no kafejnīcas, sporta nometnes vai ārzemēm. Piesakies tagad un piedalies vasaras balvu izlozē.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-              <Button variant="hero" asChild className="group">
-                <a href={APPLY_URL}>
-                  Iegūsti brīvību — piesakies
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button variant="hero-outline" asChild>
-                <a href="#programmas">Uzzināt vairāk</a>
-              </Button>
+
+        <div className="container mx-auto relative z-10 max-w-7xl px-4">
+          <div className="relative min-h-[640px] lg:min-h-[720px] flex items-center justify-center">
+
+            {/* MacBook — top left, floating behind text */}
+            <img
+              src={macbookAsset.url}
+              alt="MacBook — jūnija balva"
+              className="hidden md:block absolute top-0 -left-4 lg:left-0 w-[280px] lg:w-[420px] xl:w-[480px] opacity-95 drop-shadow-2xl rotate-[-6deg] z-0 pointer-events-none select-none"
+              loading="eager"
+            />
+
+            {/* AirPods — bottom left */}
+            <img
+              src={airpodsAsset.url}
+              alt="AirPods — augusta balva"
+              className="hidden md:block absolute bottom-0 left-8 lg:left-24 w-[140px] lg:w-[200px] xl:w-[230px] drop-shadow-2xl rotate-[-12deg] z-20 pointer-events-none select-none"
+              loading="eager"
+            />
+
+            {/* iPhone — right side */}
+            <img
+              src={iphoneAsset.url}
+              alt="iPhone — jūlija balva"
+              className="hidden md:block absolute top-8 right-0 lg:right-4 w-[200px] lg:w-[300px] xl:w-[340px] drop-shadow-2xl rotate-[8deg] z-20 pointer-events-none select-none"
+              loading="eager"
+            />
+
+            {/* Center text — sits in the negative space between products */}
+            <div className="relative z-10 max-w-2xl text-center space-y-6 px-2 py-12 md:py-20">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight">
+                Mācies no <span className="text-primary">jebkuras vietas</span>
+                <span className="block mt-2 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold text-foreground/80">
+                  un laimē tehnoloģijas, kas iet tev līdzi
+                </span>
+              </h1>
+              <p className="text-base lg:text-lg text-muted-foreground max-w-xl mx-auto">
+                Elastīgs grafiks. Mācies no kafejnīcas, sporta nometnes vai ārzemēm.
+                Piesakies tagad un piedalies vasaras balvu izlozē.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+                <Button variant="hero" asChild className="group">
+                  <a href={APPLY_URL}>
+                    Iegūsti brīvību — piesakies
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+                <Button variant="hero-outline" asChild>
+                  <a href="#programmas">Uzzināt vairāk</a>
+                </Button>
+              </div>
             </div>
           </div>
 
-          {/* Campaign visual */}
-          <div className="mt-12 max-w-5xl mx-auto">
-            <img
-              src={heroAsset.url}
-              alt="PHOTO: young person studying on laptop in a café or outdoors"
-              className="w-full h-auto rounded-2xl shadow-card"
-              loading="eager"
-            />
+          {/* Mobile-only: product strip below */}
+          <div className="md:hidden grid grid-cols-3 gap-2 mt-4 items-end">
+            <img src={macbookAsset.url} alt="MacBook" className="w-full h-auto drop-shadow-xl" />
+            <img src={iphoneAsset.url} alt="iPhone" className="w-full h-auto drop-shadow-xl" />
+            <img src={airpodsAsset.url} alt="AirPods" className="w-full h-auto drop-shadow-xl" />
           </div>
 
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Prize teaser */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-10 max-w-2xl mx-auto">
+          {/* Prize teaser */}
+          <div className="max-w-3xl mx-auto text-center mt-8 lg:mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
               {prizeValueProps.map((p) => (
                 <div
                   key={p.month}
-                  className="flex items-center gap-3 bg-card/70 backdrop-blur border border-border rounded-xl px-4 py-3 shadow-soft"
+                  className="flex items-center gap-3 bg-card/80 backdrop-blur border border-border rounded-xl px-4 py-3 shadow-soft"
                 >
                   <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
                     <p.icon className="w-5 h-5 text-orange-dark" />
