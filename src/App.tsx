@@ -13,6 +13,7 @@ import Aktualitates from "./pages/Aktualitates";
 import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
 import ProgrammaVirziens from "./pages/ProgrammaVirziens";
+import VasarasKampana from "./pages/VasarasKampana";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/kontakti" element={<Kontakti />} />
           <Route path="/aktualitates" element={<Aktualitates />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/vasaras-kampana" element={<VasarasKampana />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
