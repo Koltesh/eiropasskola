@@ -14,6 +14,7 @@ import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
 import ProgrammaVirziens from "./pages/ProgrammaVirziens";
 import VasarasKampana from "./pages/VasarasKampana";
+import BrivibasDzivesstils from "./pages/BrivibasDzivesstils";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/aktualitates" element={<Aktualitates />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/vasaras-kampana" element={<VasarasKampana />} />
+          <Route path="/brivibas-dzivesstils" element={<BrivibasDzivesstils />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
