@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import heroAsset from "@/assets/iestajies-etv-laime-hero.png.asset.json";
 import {
   ArrowRight,
   Briefcase,
@@ -131,6 +132,20 @@ const VasarasKampana = () => {
                 <a href="#programmas">Uzzināt vairāk</a>
               </Button>
             </div>
+          </div>
+
+          {/* Campaign visual */}
+          <div className="mt-12 max-w-5xl mx-auto">
+            <img
+              src={heroAsset.url}
+              alt="Iestājies ETV un laimē visu vasaru — MacBook, iPhone, AirPods balvas"
+              className="w-full h-auto rounded-2xl shadow-card"
+              loading="eager"
+            />
+          </div>
+
+          <div className="max-w-3xl mx-auto text-center">
+
 
             {/* Prize teaser */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-10 max-w-2xl mx-auto">
