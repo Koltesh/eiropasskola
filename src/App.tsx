@@ -14,6 +14,7 @@ import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
 import ProgrammaVirziens from "./pages/ProgrammaVirziens";
 import VasarasKampana from "./pages/VasarasKampana";
+import BrivibasDzivesstils from "./pages/BrivibasDzivesstils";
 
 const queryClient = new QueryClient();
 
