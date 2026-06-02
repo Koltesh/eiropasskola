@@ -274,7 +274,7 @@ const BrivibasDzivesstils = () => {
               Tava dzīve, tavi noteikumi
             </h2>
             <p className="text-muted-foreground">
-              Nevajag izvēlēties starp mācībām un dzīvi — ETV dod tev abu pasaulju labāko.
+              Nav jāizvēlas starp mācībām un dzīvi — ETV piedāvā labāko no abām pasaulēm.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
